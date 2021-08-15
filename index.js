@@ -47,7 +47,7 @@ function checkCollision(eleleft) {
   var ply = document.getElementById("player");
   var div = document.getElementById("falling");
   if (
-    parseInt(div.style.top) >= 55 &&
+    parseInt(div.style.top) >= 65 &&
     parseInt(ply.style.left) + 8 >= eleleft &&
     eleleft + 5 >= parseInt(ply.style.left)
   ) {
