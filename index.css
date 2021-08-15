@@ -1,0 +1,82 @@
+body{
+    margin: 0px;
+}
+
+.player{  
+    height: 20%;
+    font-size: 2vw;
+    width:8%;
+    background-color: gray;
+    border: 0.4vw solid black;
+    position: sticky;
+    top: 90%;
+    left:50%
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#score,#chances{
+    z-index: 2;
+    color: darkgray;
+    opacity: 0.8;
+    padding: 2vw;
+    font-size: 3vw;
+}
+
+#main-container{
+    width: 100vw;
+    height: 100vh;
+}
+.upper{
+    width:100%;
+    height: 80%;
+    background-color: aqua;
+}
+.lower{
+    width:100%;
+    height: 20%;
+    background-color: brown;
+}
+#start,#description,#result{
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    opacity: 0.8;
+    flex-direction: column;
+    position: fixed;
+    text-align: center;
+    color:azure;
+    font-size: 2vw;
+}
+
+#result{
+    font-size: 10vw;
+}
+
+.type{
+    font-size: 2vw;
+    width: 12vw;
+    background: wheat;
+}
+
+.btn{
+    font-size: 4vw;
+    color:azure;
+    background: black;
+}
+
+#mobButton{
+    justify-content: space-between;
+    padding: 1% 8% 0% 8%;
+}
+
+.arrow{
+    width: 8vw;
+    height: 8vw;
+    border-radius:50% ;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <script src="index.js" type="text/javascript"></script>
+    <title>SEE THE SKY</title>
+</head>
+<body>
+    <div id="start" class="flex">
+        <div>
+            <p style="display: inline; margin-right: 1vw;font-size: 2.5vw;">Device Type:</p>
+            <button class="type" id="mob" onclick="switchDevice()" style="border: 0.2vw solid white;">MOBILE</button>
+            <button class="type" id="pc" onclick="switchDevice()" style="border: 0.2vw solid white;" disabled>PC</button>
+        </div>
+        <button class="btn" onclick="newElement()" style="margin-top: 2vh;border: 0.2vw solid white;">PLAY</button>
+        <button class="btn" onclick="howToPlay()" style="margin-top: 2vh;border: 0.2vw solid white;">How to play</button>
+    </div>
+    <div id="description" class="flex" style="display: none;">
+        <p>In this game there is randomly falling object one by one.<br>Player's aim is to catch those objects.
+            <br>For movement use <strong>left</strong> and <strong>right</strong> arrow keys.
+            <br>For catching one object score will increase by <strong>10</strong> and for every miss chance is reduced.<br>
+            Take care that you only have <strong>five</strong> chances per game.</p>
+        <button class="btn" onclick="back()">Back</button>
+    </div>
+    <div id="result" class="flex" style="display: none;"></div>
+    <div id="main-container">
+        <div class="upper" id="upper">
+            <div style="display: flex;justify-content: space-between;">
+            <div id="score">SCORE: 0</div>
+            <div id="chances">CHANCES LEFT: 5</div>
+            </div>
+            <div id="player" class="player flex">
+                PLAYER
+            </div>
+        </div>
+        <div class="lower">
+            <div class="flex" id="mobButton" style="display: none;">
+                <button onmouseup="stop()" onmousedown="leftMove()" class="arrow"></button>
+                <button onmouseup="stop()" onmousedown="rightMove()" class="arrow"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
