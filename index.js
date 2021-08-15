@@ -90,6 +90,7 @@ function playerMovement(e) {
 }
 
 leftMove = () => {
+  clearInterval(tt)
   tt = setInterval(left, 100)
 }
 
@@ -104,6 +105,7 @@ stop = () => {
 }
 
 rightMove = () => {
+  clearInterval(tt)
   tt = setInterval(right, 100)
 }
 
