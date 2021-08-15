@@ -79,4 +79,5 @@ body{
     width: 8vw;
     height: 7vw;
     border-radius:50% ;
+    touch-action: none;
 }

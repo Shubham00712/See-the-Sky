@@ -38,8 +38,14 @@
         </div>
         <div class="lower">
             <div class="flex" id="mobButton" style="display: none;">
-                <button><img onmouseleave="stop()" src="Left.png"  onmouseenter="leftMove()" class="arrow"/></button>
-                <button><img onmouseleave="stop()" src="Right.png"  onmouseenter="rightMove()" class="arrow"></button>
+                <button id="leftbtn">
+                    <div onpointerleave="stop()"   onpointerenter="leftMove()"  style="position:absolute;z-index: 1;width: 8vw;height: 7vw;"></div>
+                    <img src="Left.png" class="arrow"/>
+                </button>
+                <button id="rightbtn">
+                    <div onpointerleave="stop()"   onpointerenter="rightMove()"  style="position:absolute;z-index: 1;width: 8vw;height: 7vw;"></div>
+                    <img src="Right.png" class="arrow">
+                </button>
             </div>
         </div>
     </div>

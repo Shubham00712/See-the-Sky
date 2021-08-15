@@ -1,5 +1,5 @@
 var duration = 50,
-  c = 0,
+  c = 0,btn,
   s, tt,
   score = 0,
   chances = 5,
@@ -90,27 +90,37 @@ function playerMovement(e) {
 }
 
 leftMove = () => {
+  clearInterval(tt)
   tt = setInterval(left, 100)
+  btn="left"
 }
 
 function left() {
   var ply = document.getElementById("player");
-  if (parseInt(ply.style.left) >= 5)
+  if (parseInt(ply.style.left) >= 5){
     ply.style.left = parseInt(ply.style.left) - 5 + "%";
+    document.getElementById('rightbtn').disabled=true
+  }
 }
 
 stop = () => {
   clearInterval(tt)
+  // if(btn==="left")
+  document.getElementById('leftbtn').disabled=false
+  document.getElementById('rightbtn').disabled=false
 }
 
 rightMove = () => {
+  clearInterval(tt)
   tt = setInterval(right, 100)
 }
 
 function right() {
   var ply = document.getElementById("player");
-  if (parseInt(ply.style.left) <= 90)
+  if (parseInt(ply.style.left) <= 90){
     ply.style.left = parseInt(ply.style.left) + 5 + "%";
+    document.getElementById('leftbtn').disabled=true
+  }
 }
 
 function howToPlay() {
