@@ -1,9 +1,9 @@
 var duration = 50,
   c = 0,
-  s,tt,
+  s, tt,
   score = 0,
-  chances = 5;
-  devicePc=true;
+  chances = 5,
+devicePc = true;
 window.onload = function () {
   var ply = document.getElementById("player");
   ply.style.left = "50%";
@@ -22,16 +22,16 @@ function newElement() {
   var scene = document.getElementById("upper");
   scene.appendChild(div);
   s = setInterval(movement, duration);
-  if(devicePc)
-  document.body.addEventListener("keydown", playerMovement);
+  if (devicePc)
+    document.body.addEventListener("keydown", playerMovement);
   c++;
   if (c % 10 === 0 && c <= 60) duration -= 5;
 }
 function movement() {
   var div = document.getElementById("falling");
   div.style.top = parseInt(div.style.top) + 2 + "%";
-  if(devicePc)
-  document.body.removeEventListener("keydown", playerMovement);
+  if (devicePc)
+    document.body.removeEventListener("keydown", playerMovement);
   if (parseInt(div.style.top) === 72) {
     clearInterval(s);
     div.remove();
@@ -39,8 +39,8 @@ function movement() {
   }
   var left = parseInt(div.style.left);
   checkCollision(left);
-  if(devicePc)
-  document.body.addEventListener("keydown", playerMovement);
+  if (devicePc)
+    document.body.addEventListener("keydown", playerMovement);
 }
 
 function checkCollision(eleleft) {
@@ -71,9 +71,10 @@ function checkCollision(eleleft) {
     document.getElementById("result").innerHTML =
       "GAME OVER <br> Score:" +
       score +
-      "<br><button onclick='back()'>Home</button>";
+      "<br><button class='btn' onclick='back()'>Home</button>";
     div.remove();
     clearInterval(tt)
+    devicePc = true
     chances = 5;
     score = 0;
     duration = 50;
@@ -88,28 +89,28 @@ function playerMovement(e) {
     ply.style.left = parseInt(ply.style.left) + 5 + "%";
 }
 
-leftMove=()=>{
-  tt=setInterval(left,100)
+leftMove = () => {
+  tt = setInterval(left, 100)
 }
 
-function left(){
+function left() {
   var ply = document.getElementById("player");
-  if(parseInt(ply.style.left) >= 5)
-  ply.style.left = parseInt(ply.style.left) - 5 + "%";
+  if (parseInt(ply.style.left) >= 5)
+    ply.style.left = parseInt(ply.style.left) - 5 + "%";
 }
 
-stop=()=>{
+stop = () => {
   clearInterval(tt)
 }
 
-rightMove=()=>{
-  tt=setInterval(right,100)
+rightMove = () => {
+  tt = setInterval(right, 100)
 }
 
-function right(){
+function right() {
   var ply = document.getElementById("player");
-  if(parseInt(ply.style.left) <=90)
-  ply.style.left = parseInt(ply.style.left) + 5 + "%";
+  if (parseInt(ply.style.left) <= 90)
+    ply.style.left = parseInt(ply.style.left) + 5 + "%";
 }
 
 function howToPlay() {
@@ -125,17 +126,17 @@ back = () => {
   document.getElementById("chances").innerHTML = "CHANCES LEFT: " + chances;
 };
 
-switchDevice=()=>{
-  if(devicePc){
-    document.getElementById('mob').disabled=true
-    document.getElementById('pc').disabled=false
-    devicePc=false
-    document.getElementById('mobButton').style.display='flex'
+switchDevice = () => {
+  if (devicePc) {
+    document.getElementById('mob').disabled = true
+    document.getElementById('pc').disabled = false
+    devicePc = false
+    document.getElementById('mobButton').style.display = 'flex'
   }
-  else{
-    devicePc=true
-    document.getElementById('mob').disabled=false
-    document.getElementById('pc').disabled=true
-    document.getElementById('mobButton').style.display='none'
+  else {
+    devicePc = true
+    document.getElementById('mob').disabled = false
+    document.getElementById('pc').disabled = true
+    document.getElementById('mobButton').style.display = 'none'
   }
 }
